@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+
+import 'today_tasks_screen.dart';
+import 'completed_tasks_screen.dart';
+import 'repeated_tasks_screen.dart';
+import 'settings_screen.dart';
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int _index = 0;
+
+  final _screens = const [
+    TodayTasksScreen(),
+    CompletedTasksScreen(),
+    RepeatedTasksScreen(),
+    SettingsScreen(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _screens[_index],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _index,
+        onTap: (i) => setState(() => _index = i),
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.today), label: 'Today'),
+          BottomNavigationBarItem(icon: Icon(Icons.done_all), label: 'Completed'),
+          BottomNavigationBarItem(icon: Icon(Icons.repeat), label: 'Repeated'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
+        ],
+      ),
+    );
+  }
+}
