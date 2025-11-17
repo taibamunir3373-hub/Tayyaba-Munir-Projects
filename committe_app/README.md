@@ -1,4 +1,4 @@
-# simple_calculator
+# comitte_app
 
 A new Flutter project.
 
@@ -14,6 +14,4 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-
-
-<img width="1357" height="637" alt="image" src="https://github.com/user-attachments/assets/e6d24ae5-23ff-41f1-8d11-2241fecb56ae" />
+![1 png](https://github.com/user-attachments/assets/a43c0a0d-ca44-45ba-8291-f9ec036f1a12)
