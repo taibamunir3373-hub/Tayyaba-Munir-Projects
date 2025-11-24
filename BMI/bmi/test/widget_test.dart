@@ -1,30 +1,55 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
 
-import 'package:bmi/main.dart';
+void main() => runApp(const BMICalculator());
 
-void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+// 1. Root Widget: Added the named 'key' parameter
+class BMICalculator extends StatelessWidget {
+  const BMICalculator({super.key}); // FIX: Added key parameter
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'BMI CALCULATOR', 
+      home: const InputPage(),
+      theme: ThemeData(
+        primaryColor: const Color(0xFF0A0B21), 
+        scaffoldBackgroundColor: const Color(0xFF0A0B21),
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(color: Colors.white),
+          bodyMedium: TextStyle(color: Colors.white),
+        ),
+        colorScheme: const ColorScheme.dark().copyWith(
+          primary: Color(0xFF0A0B21),
+        ),
+      ),
+    );
+  }
+}
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+// 2. Input Page Widget: Added the named 'key' parameter
+class InputPage extends StatefulWidget {
+  const InputPage({super.key}); // FIX: Added key parameter
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
+  @override
+  // FIX: Explicitly defined the public return type as State<InputPage>
+  State<InputPage> createState() => _InputPageState(); 
+}
+
+// 3. State Class: Remains private (correctly prefixed with _)
+class _InputPageState extends State<InputPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor, 
+        title: const Text('BMI CALCULATOR'),
+      ),
+      body: const Center(
+        child: Text(
+          'Body Text', 
+          style: TextStyle(fontSize: 24.0),
+        ),
+      ),
+    );
+  }
 }
