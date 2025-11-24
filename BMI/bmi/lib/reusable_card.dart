@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'constants.dart'; // Import sizing constants
+import 'constants.dart'; 
 
 // Reusable card container (The dark boxes for all inputs)
 class RepeatContainerCode extends StatelessWidget {
+  // NOTE: onPress is kept but not used in the above input_page.dart structure 
+  // to perfectly match the static screenshot layout.
   const RepeatContainerCode({super.key, required this.color, this.cardChild, this.onPress});
 
   final Color color;

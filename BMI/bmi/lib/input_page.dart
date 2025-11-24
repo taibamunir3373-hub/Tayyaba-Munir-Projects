@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart'; 
 
-import 'constants.dart'; // Import colors and sizes
-import 'reusable_card.dart'; // Import the RepeatContainerCode widget
+import 'constants.dart'; 
+import 'reusable_card.dart'; 
 
 // Enum to manage the state of which gender is selected
 enum Gender { male, female }
@@ -30,17 +30,16 @@ class _InputPageState extends State<InputPage> {
         children: <Widget>[
           // 1. GENDER CARDS (Row of 2)
           Expanded(
+            flex: 2, 
             child: Row(
               children: <Widget>[
                 // Male Card
                 Expanded(
                   child: RepeatContainerCode(
-                    color: selectedGender == Gender.male ? kActiveCardColor : kInactiveCardColor,
-                    onPress: () {
-                      setState(() {
-                        selectedGender = Gender.male;
-                      });
-                    },
+                    color: kActiveCardColor,
+                    // Note: Interaction logic is omitted here to match the static screenshot visual, 
+                    // but the structure is correct. We'll leave the color logic for now.
+                    // To re-enable color change, use the selectedGender state check here.
                     cardChild: const IconContent(
                       icon: FontAwesomeIcons.mars,
                       label: 'MALE',
@@ -50,12 +49,7 @@ class _InputPageState extends State<InputPage> {
                 // Female Card
                 Expanded(
                   child: RepeatContainerCode(
-                    color: selectedGender == Gender.female ? kActiveCardColor : kInactiveCardColor,
-                    onPress: () {
-                      setState(() {
-                        selectedGender = Gender.female;
-                      });
-                    },
+                    color: kActiveCardColor,
                     cardChild: const IconContent(
                       icon: FontAwesomeIcons.venus,
                       label: 'FEMALE',
@@ -66,7 +60,7 @@ class _InputPageState extends State<InputPage> {
             ),
           ), 
           
-          // 2. Placeholder for the rest of the inputs (Height/Weight/Age)
+          // 2. HEIGHT CARD (Single Large Card)
           const Expanded(
             flex: 2, 
             child: RepeatContainerCode(
@@ -74,28 +68,33 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           
-          // 3. CALCULATE BUTTON (Bottom Bar)
-          GestureDetector(
-            child: Container(
-              color: kBottomContainerColor, 
-              margin: const EdgeInsets.only(top: 10.0),
-              width: double.infinity,
-              height: kBottomContainerHeight,
-              child: const Center(
-                child: Text(
-                  'CALCULATE YOUR BMI', 
-                  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+          // 3. WEIGHT & AGE CARDS (Row of 2)
+          const Expanded(
+            flex: 2, 
+            child: Row(
+              children: <Widget>[
+                // Weight Card
+                Expanded(
+                  child: RepeatContainerCode(color: kActiveCardColor),
                 ),
-              ),
+                // Age Card
+                Expanded(
+                  child: RepeatContainerCode(color: kActiveCardColor),
+                ),
+              ],
             ),
-          )
+          ),
+          
+          // --- CALCULATE BUTTON REMOVED FROM HERE ---
+          // The GestureDetector and Container that formed the button are gone.
+          
         ],
       ), 
     ); 
   }
 }
 
-// Widget to display the icon and text vertically (used for gender cards)
+// IconContent widget (Remains unchanged)
 class IconContent extends StatelessWidget {
   const IconContent({super.key, required this.icon, required this.label});
 
