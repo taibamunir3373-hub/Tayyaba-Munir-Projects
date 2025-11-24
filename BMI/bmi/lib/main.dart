@@ -46,21 +46,60 @@ class InputPage extends StatefulWidget {
 
 // 3. STATE CLASS: Builds the UI for the InputPage
 class _InputPageState extends State<InputPage> {
-  @override
-  Widget build(BuildContext context) {
-    // Scaffold provides the screen structure
-    return Scaffold(
-      appBar: AppBar(
-        // Use the defined primary color for the AppBar background
-        backgroundColor: Theme.of(context).primaryColor, 
-        title: Text('BMI CALCULATOR'),
-      ),
-      body: Center(
-        child: Text(
-          'Body Text', // Placeholder text matching the emulator image
-          style: TextStyle(fontSize: 24.0), // Example style
-        ),
-      ),
-    );
-  }
+ // Assumes this code is inside the build method of the _InputPageState class:
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text('BMI CALCULATOR'),
+    ),
+    // The main vertical layout container
+    body: Column(
+      children: <Widget>[
+        // First Expanded Widget (takes up proportional vertical space)
+        Expanded(
+          child: Row(
+            // The row divides this vertical space horizontally
+            children: <Widget>[
+              // First Expanded Widget in the Row (takes up half the horizontal space)
+              Expanded(
+                child: Container( // Using Container instead of null to hold UI
+                  // In the full app, this will likely hold the Male gender card
+                  // The image code showed 'child: null', but we use a Container
+                  // to demonstrate where the content goes.
+                ),
+              ), // // Expanded
+
+              // Second Expanded Widget in the Row (takes up the other half)
+              Expanded(
+                child: Container( // Using Container instead of null to hold UI
+                  // In the full app, this will likely hold the Female gender card
+                ),
+              ), // // Expanded
+            ],
+          ), // // Row
+        ), // // Expanded
+
+        // The image snippet implies there are more Expanded widgets below 
+        // to take up the rest of the vertical space (e.g., for Height, Weight, Age).
+
+        // Placeholder for the remaining Expanded sections (not fully visible):
+        // Expanded(
+        //   child: Container(), // For the height slider card
+        // ),
+        // Expanded(
+        //   child: Row(
+        //     children: <Widget>[
+        //       Expanded(child: Container()), // For the weight card
+        //       Expanded(child: Container()), // For the age card
+        //     ],
+        //   ),
+        // ),
+        // Container(
+        //   height: 80.0, // For the bottom calculate button
+        // )
+      ],
+    ), // // Column
+  ); // // Scaffold
 }
+  }
