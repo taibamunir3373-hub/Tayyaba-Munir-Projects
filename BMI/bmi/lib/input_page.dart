@@ -37,7 +37,7 @@ class _InputPageState extends State<InputPage> {
                 // Male Card
                 Expanded(
                   child: RepeatContainerCode(
-                    // Logic using enum for color change
+                    // === USE OF TERNARY OPERATOR HERE ===
                     color: selectedGender == Gender.male ? kActiveCardColor : kInactiveCardColor,
                     onPress: () {
                       setState(() {
@@ -53,7 +53,7 @@ class _InputPageState extends State<InputPage> {
                 // Female Card
                 Expanded(
                   child: RepeatContainerCode(
-                    // Logic using enum for color change
+                    // === USE OF TERNARY OPERATOR HERE ===
                     color: selectedGender == Gender.female ? kActiveCardColor : kInactiveCardColor,
                     onPress: () {
                       setState(() {
@@ -94,8 +94,6 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          
-          // Note: The CALCULATE BUTTON is explicitly removed here to match your request.
         ],
       ), 
     ); 
