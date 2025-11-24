@@ -17,6 +17,7 @@ class InputPage extends StatefulWidget {
 
 // 3. STATE CLASS: Builds the UI and manages state
 class _InputPageState extends State<InputPage> {
+  // State variable using the Gender enum
   Gender? selectedGender; 
 
   @override
@@ -36,10 +37,13 @@ class _InputPageState extends State<InputPage> {
                 // Male Card
                 Expanded(
                   child: RepeatContainerCode(
-                    color: kActiveCardColor,
-                    // Note: Interaction logic is omitted here to match the static screenshot visual, 
-                    // but the structure is correct. We'll leave the color logic for now.
-                    // To re-enable color change, use the selectedGender state check here.
+                    // Logic using enum for color change
+                    color: selectedGender == Gender.male ? kActiveCardColor : kInactiveCardColor,
+                    onPress: () {
+                      setState(() {
+                        selectedGender = Gender.male;
+                      });
+                    },
                     cardChild: const IconContent(
                       icon: FontAwesomeIcons.mars,
                       label: 'MALE',
@@ -49,7 +53,13 @@ class _InputPageState extends State<InputPage> {
                 // Female Card
                 Expanded(
                   child: RepeatContainerCode(
-                    color: kActiveCardColor,
+                    // Logic using enum for color change
+                    color: selectedGender == Gender.female ? kActiveCardColor : kInactiveCardColor,
+                    onPress: () {
+                      setState(() {
+                        selectedGender = Gender.female;
+                      });
+                    },
                     cardChild: const IconContent(
                       icon: FontAwesomeIcons.venus,
                       label: 'FEMALE',
@@ -85,16 +95,14 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           
-          // --- CALCULATE BUTTON REMOVED FROM HERE ---
-          // The GestureDetector and Container that formed the button are gone.
-          
+          // Note: The CALCULATE BUTTON is explicitly removed here to match your request.
         ],
       ), 
     ); 
   }
 }
 
-// IconContent widget (Remains unchanged)
+// IconContent widget
 class IconContent extends StatelessWidget {
   const IconContent({super.key, required this.icon, required this.label});
 

@@ -11,17 +11,21 @@ class BMICalculator extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'BMI CALCULATOR',
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, 
       home: const InputPage(),
-
+      
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: kPrimaryColor,
-        colorScheme: const ColorScheme.dark().copyWith(primary: kPrimaryColor),
+        scaffoldBackgroundColor: kPrimaryColor, 
+        colorScheme: const ColorScheme.dark().copyWith(
+          primary: kPrimaryColor,
+        ),
         textTheme: const TextTheme(
           bodyLarge: TextStyle(color: Colors.white),
           bodyMedium: TextStyle(color: Colors.white),
         ),
-        appBarTheme: const AppBarTheme(backgroundColor: kPrimaryColor),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: kPrimaryColor,
+        )
       ),
     );
   }
