@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 
 // --- CONSTANTS ---
 // Hex color for the input cards
-const Color activeCardColor = Color(0xFF1D1E33); 
+const Color kActiveCardColor = Color(0xFF1D1E33); 
 // Hex color for the bottom calculation button
-const Color bottomContainerColor = Color(0xFFEB1555); 
-const double bottomContainerHeight = 80.0;
+const Color kBottomContainerColor = Color(0xFFEB1555); 
+const Color kPrimaryColor = Color(0xFF0A0B21); 
+
+const double kBottomContainerHeight = 80.0;
+const double kCardMargin = 15.0;
+const double kCardBorderRadius = 10.0;
 
 void main() => runApp(const BMICalculator());
 
@@ -17,30 +21,29 @@ class BMICalculator extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'BMI CALCULATOR',
-      // Removes the "DEBUG" banner in the corner
       debugShowCheckedModeBanner: false, 
-      
-      // The first screen of the app
       home: const InputPage(),
       
       // Theme Data for a dark-themed app
-      theme: ThemeData(
-        // Primary Color (0xFF0A0B21 - very dark grey/black)
-        primaryColor: const Color(0xFF0A0B21), 
+      theme: ThemeData.dark().copyWith(
+        // Set the primary background color for Scaffolds
+        scaffoldBackgroundColor: kPrimaryColor, 
         
-        // Background Color for Scaffolds
-        scaffoldBackgroundColor: const Color(0xFF0A0B21),
-
-        // Text Theme: Sets default text color to white for visibility
+        // Use colorScheme for modern Flutter theming
+        colorScheme: const ColorScheme.dark().copyWith(
+          primary: kPrimaryColor,
+        ),
+        
+        // Define text styles globally
         textTheme: const TextTheme(
           bodyLarge: TextStyle(color: Colors.white),
           bodyMedium: TextStyle(color: Colors.white),
         ),
-
-        // Modern way to set up a dark color scheme
-        colorScheme: const ColorScheme.dark().copyWith(
-          primary: const Color(0xFF0A0B21),
-        ),
+        
+        // Apply theme to the AppBar
+        appBarTheme: const AppBarTheme(
+          backgroundColor: kPrimaryColor,
+        )
       ),
     );
   }
@@ -60,8 +63,6 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Use the defined primary color for the AppBar background
-        backgroundColor: Theme.of(context).primaryColor, 
         title: const Text('BMI CALCULATOR'),
       ),
       // The main vertical layout container
@@ -70,16 +71,16 @@ class _InputPageState extends State<InputPage> {
         crossAxisAlignment: CrossAxisAlignment.stretch, 
         children: <Widget>[
           // 1. GENDER CARDS (Row of 2)
-          Expanded(
+          const Expanded(
             child: Row(
-              children: const <Widget>[
+              children: <Widget>[
                 // Male Card
                 Expanded(
-                  child: CardContainer(color: activeCardColor),
+                  child: RepeatContainerCode(color: kActiveCardColor),
                 ), 
                 // Female Card
                 Expanded(
-                  child: CardContainer(color: activeCardColor),
+                  child: RepeatContainerCode(color: kActiveCardColor),
                 ),
               ],
             ),
@@ -87,20 +88,20 @@ class _InputPageState extends State<InputPage> {
           
           // 2. HEIGHT SLIDER CARD (Single Large Card)
           const Expanded(
-            child: CardContainer(color: activeCardColor),
+            child: RepeatContainerCode(color: kActiveCardColor),
           ),
           
           // 3. WEIGHT & AGE CARDS (Row of 2)
-          Expanded(
+          const Expanded(
             child: Row(
-              children: const <Widget>[
+              children: <Widget>[
                 // Weight Card
                 Expanded(
-                  child: CardContainer(color: activeCardColor),
+                  child: RepeatContainerCode(color: Color.fromARGB(255, 182, 184, 224)),
                 ),
                 // Age Card
                 Expanded(
-                  child: CardContainer(color: activeCardColor),
+                  child: RepeatContainerCode(color: kActiveCardColor),
                 ),
               ],
             ),
@@ -108,11 +109,11 @@ class _InputPageState extends State<InputPage> {
           
           // 4. CALCULATE BUTTON (Bottom Bar)
           Container(
-            color: bottomContainerColor, 
+            color: kBottomContainerColor, 
             margin: const EdgeInsets.only(top: 10.0),
             width: double.infinity,
-            height: bottomContainerHeight,
-            // You would typically add a Text widget here:
+            height: kBottomContainerHeight,
+            // Example of content for the button:
             // child: const Center(child: Text('CALCULATE', style: TextStyle(fontSize: 25.0))),
           )
         ],
@@ -122,19 +123,19 @@ class _InputPageState extends State<InputPage> {
 }
 
 // --- REUSABLE WIDGET ---
-// A custom StatelessWidget to represent the reusable card containers
-class CardContainer extends StatelessWidget {
-  const CardContainer({super.key, required this.color});
+// This class name matches the one visible in your uploaded image (image_54f5d5.png).
+class RepeatContainerCode extends StatelessWidget {
+  const RepeatContainerCode({super.key, required this.color});
 
   final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(15.0),
+      margin: const EdgeInsets.all(kCardMargin),
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(kCardBorderRadius),
       ),
     );
   }
