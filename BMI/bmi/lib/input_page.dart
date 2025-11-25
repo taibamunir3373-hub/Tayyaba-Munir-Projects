@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'constants.dart'; 
 import 'reusable_card.dart'; 
 
-// Enum to manage the state of which gender is selected
+// Enum for state management
 enum Gender { male, female }
 
 // 2. INPUT PAGE WIDGET
@@ -37,7 +37,7 @@ class _InputPageState extends State<InputPage> {
                 // Male Card
                 Expanded(
                   child: RepeatContainerCode(
-                    // === USE OF TERNARY OPERATOR HERE ===
+                    // Ternary Operator: Checks if male is selected
                     color: selectedGender == Gender.male ? kActiveCardColor : kInactiveCardColor,
                     onPress: () {
                       setState(() {
@@ -53,7 +53,7 @@ class _InputPageState extends State<InputPage> {
                 // Female Card
                 Expanded(
                   child: RepeatContainerCode(
-                    // === USE OF TERNARY OPERATOR HERE ===
+                    // Ternary Operator: Checks if female is selected
                     color: selectedGender == Gender.female ? kActiveCardColor : kInactiveCardColor,
                     onPress: () {
                       setState(() {
@@ -94,6 +94,8 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
+          
+          // The CALCULATE BUTTON is explicitly removed here.
         ],
       ), 
     ); 

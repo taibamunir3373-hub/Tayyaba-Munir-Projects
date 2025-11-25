@@ -11,7 +11,7 @@ class RepeatContainerCode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // GestureDetector enables tap functionality
+    // GestureDetector enables tap functionality (Function Object)
     return GestureDetector(
       onTap: onPress, 
       child: Container(
