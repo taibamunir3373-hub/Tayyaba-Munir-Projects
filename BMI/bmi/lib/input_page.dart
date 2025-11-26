@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; // <--- ESSENTIAL IMPORT FOR WIDGETS AND NAVIGATOR
 import 'package:font_awesome_flutter/font_awesome_flutter.dart'; 
 
 import 'constants.dart'; 
 import 'reusable_card.dart'; 
 import 'round_icon_button.dart'; 
+import 'results_page.dart'; // <--- NEW IMPORT FOR NAVIGATION TARGET
 
 // Enum for state management
 enum Gender { male, female }
@@ -22,7 +23,7 @@ class _InputPageState extends State<InputPage> {
   Gender? selectedGender; 
   int height = 180; 
   int weight = 60; 
-  int age = 19; // <--- NEW STATE VARIABLE FOR AGE
+  int age = 19; 
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class _InputPageState extends State<InputPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch, 
           children: <Widget>[
-            // 1. GENDER CARDS (Row of 2 - Unchanged)
+            // 1. GENDER CARDS (Row of 2)
             SizedBox(
               height: 200, 
               child: Row(
@@ -65,7 +66,7 @@ class _InputPageState extends State<InputPage> {
               ),
             ), 
             
-            // 2. HEIGHT CARD (Slider - Unchanged)
+            // 2. HEIGHT CARD (Slider)
             SizedBox(
               height: 250, 
               child: RepeatContainerCode(
@@ -104,12 +105,12 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             
-            // 3. WEIGHT & AGE CARDS (Row of 2 - Updated for Age)
+            // 3. WEIGHT & AGE CARDS (Row of 2)
             SizedBox(
               height: 200, 
               child: Row(
                 children: <Widget>[
-                  // Weight Card (Updated with buttons)
+                  // Weight Card
                   Expanded(
                     child: RepeatContainerCode(
                       color: kActiveCardColor,
@@ -125,7 +126,7 @@ class _InputPageState extends State<InputPage> {
                                 icon: FontAwesomeIcons.minus,
                                 onPressed: () {
                                   setState(() {
-                                    weight--;
+                                    weight = (weight > 1) ? weight - 1 : 1; // Prevent going below 1
                                   });
                                 },
                               ),
@@ -144,7 +145,7 @@ class _InputPageState extends State<InputPage> {
                       ),
                     ),
                   ),
-                  // Age Card (Updated with buttons)
+                  // Age Card
                   Expanded(
                     child: RepeatContainerCode(
                       color: kActiveCardColor,
@@ -152,15 +153,15 @@ class _InputPageState extends State<InputPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           const Text('AGE', style: kLabelTextStyle),
-                          Text(age.toString(), style: kNumberTextStyle), // Use state variable for age
-                          Row( // Row for the custom buttons
+                          Text(age.toString(), style: kNumberTextStyle), 
+                          Row( 
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               RoundIconButton(
                                 icon: FontAwesomeIcons.minus,
                                 onPressed: () {
                                   setState(() {
-                                    age--;
+                                    age = (age > 1) ? age - 1 : 1; // Prevent going below 1
                                   });
                                 },
                               ),
@@ -183,17 +184,22 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             
-            // Calculate Button (Added back)
+            // Calculate Button (Using Navigator)
             GestureDetector(
-              // You can add navigation or BMI calculation logic here later
               onTap: () {
-                debugPrint('Calculate button pressed!'); 
+                // Navigate to the ResultsPage
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(
+                    builder: (context) => const ResultsPage(), 
+                  ),
+                );
               },
               child: Container(
                 color: kBottomContainerColor, 
                 width: double.infinity,
                 height: kBottomContainerHeight,
-                margin: const EdgeInsets.only(top: 10.0), // Add some margin from the cards
+                margin: const EdgeInsets.only(top: 10.0), 
                 child: const Center(
                   child: Text(
                     'CALCULATE YOUR BMI', 
