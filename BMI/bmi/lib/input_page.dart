@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart'; // <--- ESSENTIAL IMPORT FOR WIDGETS AND NAVIGATOR
 import 'package:font_awesome_flutter/font_awesome_flutter.dart'; 
-
+import 'bmi_calculator.dart';
 import 'constants.dart'; 
 import 'reusable_card.dart'; 
 import 'round_icon_button.dart'; 
@@ -185,16 +185,30 @@ class _InputPageState extends State<InputPage> {
             ),
             
             // Calculate Button (Using Navigator)
-            GestureDetector(
-              onTap: () {
-                // Navigate to the ResultsPage
-                Navigator.push(
-                  context, 
-                  MaterialPageRoute(
-                    builder: (context) => const ResultsPage(), 
-                  ),
-                );
-              },
+            // Inside input_page.dart (Focus on the GestureDetector)
+
+// ... existing code above ...
+
+// Calculate Button (Updated to Calculate and Navigate)
+GestureDetector(
+  onTap: () {
+    // 1. Create the calculator object using current state values
+    BMICalculator calc = BMICalculator(height: height, weight: weight);
+
+    // 2. Navigate to the ResultsPage, passing the required data
+    Navigator.push(
+      context, 
+      MaterialPageRoute(
+        builder: (context) => ResultsPage(
+          // Passing calculated data to the ResultsPage constructor
+          bmiResult: calc.calculateBMI(),
+          resultText: calc.getResult(),
+          interpretation: calc.getInterpretation(),
+        ),
+      ),
+    );
+  },
+  
               child: Container(
                 color: kBottomContainerColor, 
                 width: double.infinity,
