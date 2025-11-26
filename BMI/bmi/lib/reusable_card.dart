@@ -7,11 +7,10 @@ class RepeatContainerCode extends StatelessWidget {
 
   final Color color;
   final Widget? cardChild;
-  final VoidCallback? onPress; // Function Object
+  final VoidCallback? onPress; 
 
   @override
   Widget build(BuildContext context) {
-    // GestureDetector uses the onPress Function Object
     return GestureDetector(
       onTap: onPress, 
       child: Container(
