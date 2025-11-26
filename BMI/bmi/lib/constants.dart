@@ -7,10 +7,10 @@ const Color kActiveCardColor = Color(0xFF1D1E33);
 const Color kInactiveCardColor = Color(0xFF111328);   
 const Color kBottomContainerColor = Color(0xFFEB1555); 
 
-// Sizing Constants
+// Sizing Constants (Used for Containers/Cards)
 const double kBottomContainerHeight = 80.0;
 const double kCardMargin = 15.0;
-const double kCardBorderRadius = 10.0;
+const double kCardBorderRadius = 10.0; // Corner radius for the containers
 const double kIconSize = 80.0;
 
 const SizedBox kHeightSpacer = SizedBox(height: 15.0);

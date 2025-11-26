@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; // <-- THIS LINE IS ESSENTIAL AND WAS MISSING
 import 'input_page.dart';
 import 'constants.dart';
 

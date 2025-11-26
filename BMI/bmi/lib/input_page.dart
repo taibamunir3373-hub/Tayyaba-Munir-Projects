@@ -71,10 +71,21 @@ class _InputPageState extends State<InputPage> {
           ), 
           
           // 2. HEIGHT CARD (Single Large Card)
-          const Expanded(
+          Expanded(
             flex: 2, 
             child: RepeatContainerCode(
               color: kActiveCardColor,
+              // === ADDED HEIGHT CONTENT HERE ===
+              cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'HEIGHT',
+                    style: kLabelTextStyle,
+                  ),
+                  // Additional widgets for height value/slider would go here
+                ],
+              ),
             ),
           ),
           
@@ -94,15 +105,13 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          
-          // The CALCULATE BUTTON is intentionally excluded here.
         ],
       ), 
     ); 
   }
 }
 
-// IconContent widget
+// IconContent widget (Used for gender icons and labels)
 class IconContent extends StatelessWidget {
   const IconContent({super.key, required this.icon, required this.label});
 
