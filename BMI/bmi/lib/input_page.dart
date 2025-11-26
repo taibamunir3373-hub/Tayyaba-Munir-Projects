@@ -27,19 +27,14 @@ class _InputPageState extends State<InputPage> {
       appBar: AppBar(
         title: const Text('BMI CALCULATOR'),
       ),
-      // === FIX: Wrapping the Column in SingleChildScrollView ===
+      // FIX: SingleChildScrollView handles overflow
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch, 
-          // Note: Since the Column is now in a SingleChildScrollView, 
-          // we should wrap the Expanded widgets with a SizedBox to guarantee 
-          // they take up the visual space needed, as they lose their strict 
-          // expansion capability.
-
           children: <Widget>[
             // 1. GENDER CARDS (Row of 2)
             SizedBox(
-              height: 200, // Fixed height for this section to prevent shrinking
+              height: 200, 
               child: Row(
                 children: <Widget>[
                   // Male Card
@@ -80,7 +75,7 @@ class _InputPageState extends State<InputPage> {
             
             // 2. HEIGHT CARD (Single Large Card with Slider)
             SizedBox(
-              height: 250, // Fixed height for this section
+              height: 250, 
               child: RepeatContainerCode(
                 color: kActiveCardColor,
                 cardChild: Column(
@@ -96,7 +91,7 @@ class _InputPageState extends State<InputPage> {
                       textBaseline: TextBaseline.alphabetic, 
                       children: <Widget>[
                         Text(
-                          height.toString(), // Display the current height state
+                          height.toString(), 
                           style: kNumberTextStyle, 
                         ),
                         const Text(
@@ -120,7 +115,7 @@ class _InputPageState extends State<InputPage> {
                         max: 220.0, 
                         onChanged: (double newValue) {
                           setState(() {
-                            height = newValue.round(); // Update the height state
+                            height = newValue.round(); 
                           });
                         },
                       ),
@@ -131,23 +126,55 @@ class _InputPageState extends State<InputPage> {
             ),
             
             // 3. WEIGHT & AGE CARDS (Row of 2)
-            const SizedBox(
-              height: 200, // Fixed height for this section
+            SizedBox(
+              height: 200, 
               child: Row(
                 children: <Widget>[
                   // Weight Card
                   Expanded(
-                    child: RepeatContainerCode(color: kActiveCardColor),
+                    child: RepeatContainerCode(
+                      color: kActiveCardColor,
+                      // === ADDED WEIGHT CONTENT HERE ===
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          const Text(
+                            'WEIGHT',
+                            style: kLabelTextStyle,
+                          ),
+                          const Text(
+                            '60', // Placeholder weight value
+                            style: kNumberTextStyle,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                   // Age Card
                   Expanded(
-                    child: RepeatContainerCode(color: kActiveCardColor),
+                    child: RepeatContainerCode(
+                      color: kActiveCardColor,
+                      // === ADDED AGE CONTENT HERE ===
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          const Text(
+                            'AGE',
+                            style: kLabelTextStyle,
+                          ),
+                          const Text(
+                            '19', // Placeholder age value
+                            style: kNumberTextStyle,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
             
-            // Add a small spacer at the bottom to ensure everything fits comfortably
+            // Add a small spacer at the bottom
             const SizedBox(height: 10.0), 
           ],
         ),
