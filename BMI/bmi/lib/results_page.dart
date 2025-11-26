@@ -3,12 +3,11 @@ import 'constants.dart';
 import 'reusable_card.dart';
 
 class ResultsPage extends StatelessWidget {
-  // Define final properties to hold the received data
+  
   final String bmiResult;
   final String resultText;
   final String interpretation;
 
-  // Update the constructor to require the data
   const ResultsPage({
     super.key, 
     required this.bmiResult, 
@@ -23,36 +22,32 @@ class ResultsPage extends StatelessWidget {
         title: const Text('BMI CALCULATOR'),
       ),
       body: Column(
-        // MainAxisAlignment.spaceEvenly gives nice spacing as per design
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.stretch, 
         children: <Widget>[
-          // 1. YOUR RESULT Header
-          Expanded(
-            child: Container(
-              padding: const EdgeInsets.all(15.0),
-              alignment: Alignment.bottomLeft,
-              child: const Text(
-                'Your Result',
-                style: TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold),
-              ),
+          // 1. YOUR RESULT Header (Layout fix for display)
+          Container(
+            padding: const EdgeInsets.only(top: 20.0, left: 15.0, bottom: 10.0),
+            height: 100.0, 
+            alignment: Alignment.bottomLeft, 
+            child: const Text(
+              'Your Result',
+              style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold),
             ),
           ),
           
-          // 2. MAIN RESULT CARD
+          // 2. MAIN RESULT CARD (Displays data)
           Expanded(
             flex: 5,
             child: RepeatContainerCode(
-              color: kActiveCardColor, // Should be defined in constants.dart
+              color: kActiveCardColor,
               cardChild: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center, 
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  // Result Status Text (NORMAL, OVERWEIGHT, etc.)
+                  // Result Status Text
                   Text(
-                    resultText.toUpperCase(), // Use received result text
+                    resultText.toUpperCase(), 
                     style: const TextStyle(
-                      // Green color for 'NORMAL' or a general status color
                       color: Color(0xFF24D876), 
                       fontSize: 22.0,
                       fontWeight: FontWeight.bold,
@@ -61,17 +56,17 @@ class ResultsPage extends StatelessWidget {
                   
                   // BMI Score Number
                   Text(
-                    bmiResult, // Use received BMI number (e.g., '18.3')
-                    style: kNumberTextStyle.copyWith(fontSize: 100.0), // Large font size
+                    bmiResult, 
+                    style: kNumberTextStyle.copyWith(fontSize: 100.0), 
                   ),
                   
                   // Interpretation Text
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     child: Text(
-                      interpretation, // Use received interpretation
+                      interpretation, 
                       textAlign: TextAlign.center,
-                      style: kLabelTextStyle, // Should be defined in constants.dart
+                      style: kLabelTextStyle.copyWith(fontSize: 20.0), 
                     ),
                   ),
                 ],
@@ -82,14 +77,13 @@ class ResultsPage extends StatelessWidget {
           // 3. RE-CALCULATE Button
           GestureDetector(
             onTap: () {
-              // Navigator.pop returns the user to the InputPage
               Navigator.pop(context); 
             },
             child: Container(
-              color: kBottomContainerColor, // Should be defined in constants.dart
+              color: kBottomContainerColor,
               width: double.infinity,
-              height: kBottomContainerHeight, // Should be defined in constants.dart
-              margin: const EdgeInsets.only(top: 10.0),
+              height: kBottomContainerHeight,
+              margin: EdgeInsets.zero, 
               child: const Center(
                 child: Text(
                   'RE-CALCULATE',
