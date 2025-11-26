@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'constants.dart'; 
 import 'reusable_card.dart'; 
+import 'round_icon_button.dart'; 
 
 // Enum for state management
 enum Gender { male, female }
@@ -19,7 +20,9 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   // State variables
   Gender? selectedGender; 
-  int height = 180; // Default height in cm
+  int height = 180; 
+  int weight = 60; 
+  int age = 19; // <--- NEW STATE VARIABLE FOR AGE
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +30,11 @@ class _InputPageState extends State<InputPage> {
       appBar: AppBar(
         title: const Text('BMI CALCULATOR'),
       ),
-      // FIX: SingleChildScrollView handles overflow
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch, 
           children: <Widget>[
-            // 1. GENDER CARDS (Row of 2)
+            // 1. GENDER CARDS (Row of 2 - Unchanged)
             SizedBox(
               height: 200, 
               child: Row(
@@ -40,13 +42,8 @@ class _InputPageState extends State<InputPage> {
                   // Male Card
                   Expanded(
                     child: RepeatContainerCode(
-                      // Ternary Operator for color
                       color: selectedGender == Gender.male ? kActiveCardColor : kInactiveCardColor,
-                      onPress: () {
-                        setState(() {
-                          selectedGender = Gender.male;
-                        });
-                      },
+                      onPress: () { setState(() { selectedGender = Gender.male; }); },
                       cardChild: const IconContent(
                         icon: FontAwesomeIcons.mars,
                         label: 'MALE',
@@ -56,13 +53,8 @@ class _InputPageState extends State<InputPage> {
                   // Female Card
                   Expanded(
                     child: RepeatContainerCode(
-                      // Ternary Operator for color
                       color: selectedGender == Gender.female ? kActiveCardColor : kInactiveCardColor,
-                      onPress: () {
-                        setState(() {
-                          selectedGender = Gender.female;
-                        });
-                      },
+                      onPress: () { setState(() { selectedGender = Gender.female; }); },
                       cardChild: const IconContent(
                         icon: FontAwesomeIcons.venus,
                         label: 'FEMALE',
@@ -73,7 +65,7 @@ class _InputPageState extends State<InputPage> {
               ),
             ), 
             
-            // 2. HEIGHT CARD (Single Large Card with Slider)
+            // 2. HEIGHT CARD (Slider - Unchanged)
             SizedBox(
               height: 250, 
               child: RepeatContainerCode(
@@ -81,23 +73,14 @@ class _InputPageState extends State<InputPage> {
                 cardChild: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    const Text(
-                      'HEIGHT',
-                      style: kLabelTextStyle,
-                    ),
+                    const Text('HEIGHT', style: kLabelTextStyle),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       textBaseline: TextBaseline.alphabetic, 
                       children: <Widget>[
-                        Text(
-                          height.toString(), 
-                          style: kNumberTextStyle, 
-                        ),
-                        const Text(
-                          'cm',
-                          style: kLabelTextStyle,
-                        ),
+                        Text(height.toString(), style: kNumberTextStyle), 
+                        const Text('cm', style: kLabelTextStyle),
                       ],
                     ),
                     SliderTheme(
@@ -110,13 +93,9 @@ class _InputPageState extends State<InputPage> {
                         overlayShape: const RoundSliderOverlayShape(overlayRadius: 30.0),
                       ),
                       child: Slider(
-                        value: height.toDouble(),
-                        min: 120.0, 
-                        max: 220.0, 
+                        value: height.toDouble(), min: 120.0, max: 220.0, 
                         onChanged: (double newValue) {
-                          setState(() {
-                            height = newValue.round(); 
-                          });
+                          setState(() { height = newValue.round(); });
                         },
                       ),
                     ),
@@ -125,46 +104,76 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             
-            // 3. WEIGHT & AGE CARDS (Row of 2)
+            // 3. WEIGHT & AGE CARDS (Row of 2 - Updated for Age)
             SizedBox(
               height: 200, 
               child: Row(
                 children: <Widget>[
-                  // Weight Card
+                  // Weight Card (Updated with buttons)
                   Expanded(
                     child: RepeatContainerCode(
                       color: kActiveCardColor,
-                      // === ADDED WEIGHT CONTENT HERE ===
                       cardChild: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          const Text(
-                            'WEIGHT',
-                            style: kLabelTextStyle,
-                          ),
-                          const Text(
-                            '60', // Placeholder weight value
-                            style: kNumberTextStyle,
+                          const Text('WEIGHT', style: kLabelTextStyle),
+                          Text(weight.toString(), style: kNumberTextStyle),
+                          Row( 
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.minus,
+                                onPressed: () {
+                                  setState(() {
+                                    weight--;
+                                  });
+                                },
+                              ),
+                              const SizedBox(width: 10.0),
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.plus,
+                                onPressed: () {
+                                  setState(() {
+                                    weight++;
+                                  });
+                                },
+                              ),
+                            ],
                           ),
                         ],
                       ),
                     ),
                   ),
-                  // Age Card
+                  // Age Card (Updated with buttons)
                   Expanded(
                     child: RepeatContainerCode(
                       color: kActiveCardColor,
-                      // === ADDED AGE CONTENT HERE ===
                       cardChild: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          const Text(
-                            'AGE',
-                            style: kLabelTextStyle,
-                          ),
-                          const Text(
-                            '19', // Placeholder age value
-                            style: kNumberTextStyle,
+                          const Text('AGE', style: kLabelTextStyle),
+                          Text(age.toString(), style: kNumberTextStyle), // Use state variable for age
+                          Row( // Row for the custom buttons
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.minus,
+                                onPressed: () {
+                                  setState(() {
+                                    age--;
+                                  });
+                                },
+                              ),
+                              const SizedBox(width: 10.0),
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.plus,
+                                onPressed: () {
+                                  setState(() {
+                                    age++;
+                                  });
+                                },
+                              ),
+                            ],
                           ),
                         ],
                       ),
@@ -174,8 +183,25 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             
-            // Add a small spacer at the bottom
-            const SizedBox(height: 10.0), 
+            // Calculate Button (Added back)
+            GestureDetector(
+              // You can add navigation or BMI calculation logic here later
+              onTap: () {
+                debugPrint('Calculate button pressed!'); 
+              },
+              child: Container(
+                color: kBottomContainerColor, 
+                width: double.infinity,
+                height: kBottomContainerHeight,
+                margin: const EdgeInsets.only(top: 10.0), // Add some margin from the cards
+                child: const Center(
+                  child: Text(
+                    'CALCULATE YOUR BMI', 
+                    style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ), 
