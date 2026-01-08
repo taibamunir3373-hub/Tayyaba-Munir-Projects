@@ -2,45 +2,24 @@ import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
 class DBHelper {
-  static final DBHelper _instance = DBHelper._internal();
-  factory DBHelper() => _instance;
-  DBHelper._internal();
-
   static Database? _database;
 
   Future<Database> get database async {
     if (_database != null) return _database!;
-    _database = await _initDB();
+    _database = await _initDatabase();
     return _database!;
   }
 
-  Future<Database> _initDB() async {
+  Future<Database> _initDatabase() async {
+    // 'join' aur 'getDatabasesPath' ab kaam karenge agar path package install ho gaya
     String path = join(await getDatabasesPath(), 'smart_pos.db');
     return await openDatabase(
       path,
       version: 1,
-      onCreate: (db, version) async {
-        // Create Products Table
-        await db.execute('''
-          CREATE TABLE products (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT,
-            sku TEXT,
-            price REAL,
-            stock INTEGER,
-            is_synced INTEGER DEFAULT 0
-          )
-        ''');
-        
-        // Create Sales Table
-        await db.execute('''
-          CREATE TABLE sales (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            total_amount REAL,
-            sale_date TEXT,
-            is_synced INTEGER DEFAULT 0
-          )
-        ''');
+      onCreate: (db, version) {
+        return db.execute(
+          'CREATE TABLE products(id INTEGER PRIMARY KEY AUTO_INCREMENT, name TEXT, price REAL, stock INTEGER)',
+        );
       },
     );
   }
