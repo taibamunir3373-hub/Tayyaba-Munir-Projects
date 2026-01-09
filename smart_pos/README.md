@@ -41,3 +41,63 @@ This project is a comprehensive Point of Sale (POS) and Inventory solution desig
 1. **Clone the Repo:**
    ```bash
    git clone [https://github.com/your-username/smart_pos.git](https://github.com/your-username/smart_pos.git)
+
+   # 📱 Smart POS & Full Inventory System
+> **Final Lab Task – Mobile Application Development (Production-Ready)**
+> **CLO Covered:** 4 & 5 (Advanced Apps, Persistent Storage, API Integration)
+
+---
+
+## 🚀 Technology Stack
+* **Frontend:** Flutter (Dart)
+* **Backend:** Firebase (Online)
+* **Offline DB:** SQLite (Compulsory)
+* **Cloud Backup:** Google Drive API
+
+---
+
+## 🛠 Mandatory Features Status
+| Requirement | Description | Status |
+| :--- | :--- | :---: |
+| **Online Mode** | Works with Firebase Cloud | ✅ |
+| **Offline Mode** | Works without internet via SQLite | ✅ |
+| **Auto Sync** | Syncs data when internet is back | ✅ |
+| **Backup** | Manual & Auto Google Drive Backup | ✅ |
+| **Ledger System** | Customer Debit/Credit Tracking | ✅ |
+
+---
+
+## 📌 Project Modules
+
+### 1. Authentication & Setup
+- Secure Login/Signup using Firebase.
+- Clean MVC-based architecture.
+
+### 2. Product & Inventory Management
+- Add/Edit/Delete products with SKU.
+- Low stock alerts and visual indicators.
+- Stock history tracking.
+
+### 3. POS (Billing System)
+- Dynamic cart with quantity controls.
+- Runtime price changes, tax, and discount management.
+
+### 4. Customer & Ledger System
+- Regular & walk-in customer management.
+- Debit/Credit payments and outstanding balance logs.
+
+### 5. Offline Sync & Backup
+- **SQLite Storage:** Persistent offline sales.
+- **Sync Logic:** Automatic data merging with Firebase.
+- **Google Drive:** Backup and Restore functionality.
+
+---
+
+## 📸 Screenshots & Demo
+* **Demo APK:** [Link your APK here]
+* **Source Code:** Available in `/lib` folder.
+
+---
+
+## 👨‍🏫 Submission Note
+This application is built as a production-ready solution satisfying all enterprise-level requirements including offline-first logic and cloud synchronization.
