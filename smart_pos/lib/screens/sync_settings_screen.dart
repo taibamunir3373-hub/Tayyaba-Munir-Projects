@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '../database/database_helper.dart'; // SQLite helper import karein
 
 class SyncSettingsScreen extends StatefulWidget {
   const SyncSettingsScreen({super.key});
@@ -11,11 +13,67 @@ class _SyncSettingsScreenState extends State<SyncSettingsScreen> {
   bool offlineMode = false;
   bool allowOfflineSales = true;
   bool syncWifiOnly = false;
+  int pendingCount = 0;
+  bool isSyncing = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadPendingCount();
+  }
+
+  // SQLite se check karein kitni sales sync honay wali hain
+  Future<void> _loadPendingCount() async {
+    final unsynced = await DatabaseHelper.instance.getUnsyncedSales();
+    setState(() {
+      pendingCount = unsynced.length;
+    });
+  }
+
+  // Lab Task Commit 6: Sync Logic
+  Future<void> _handleSync() async {
+    setState(() => isSyncing = true);
+    
+    final dbHelper = DatabaseHelper.instance;
+    final unsyncedSales = await dbHelper.getUnsyncedSales();
+
+    if (unsyncedSales.isEmpty) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("No data to sync!")),
+        );
+      }
+    } else {
+      for (var sale in unsyncedSales) {
+        try {
+          // Firebase par upload
+          await FirebaseFirestore.instance.collection('sales').add({
+            'total': sale['total'],
+            'items': sale['items'],
+            'timestamp': sale['timestamp'],
+          });
+          
+          // Local DB mein update karein ke sync ho gaya
+          final db = await dbHelper.database;
+          await db.update('sales', {'isSynced': 1}, where: 'id = ?', whereArgs: [sale['id']]);
+        } catch (e) {
+          debugPrint("Sync Error: $e");
+        }
+      }
+      _loadPendingCount();
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Sync Completed Successfully!")),
+        );
+      }
+    }
+    setState(() => isSyncing = false);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0F172A), // Dark Navy Theme
+      backgroundColor: const Color(0xFF0F172A),
       appBar: AppBar(
         title: const Text("Sync & Network", style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.transparent,
@@ -35,14 +93,13 @@ class _SyncSettingsScreenState extends State<SyncSettingsScreen> {
               ),
               child: Column(
                 children: [
-                 // Line 38-44 fix
-const Row( // Add 'const' here
-  children: [
-    CircleAvatar(backgroundColor: Colors.green, radius: 5),
-    SizedBox(width: 10),
-    Text("ONLINE", style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold, fontSize: 12)),
-  ],
-),
+                  const Row(
+                    children: [
+                      CircleAvatar(backgroundColor: Colors.green, radius: 5),
+                      SizedBox(width: 10),
+                      Text("ONLINE", style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold, fontSize: 12)),
+                    ],
+                  ),
                   const SizedBox(height: 10),
                   const Align(
                     alignment: Alignment.centerLeft,
@@ -50,14 +107,14 @@ const Row( // Add 'const' here
                   ),
                   const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text("Last successful sync: Today, 10:42 AM", style: TextStyle(color: Colors.white38, fontSize: 12)),
+                    child: Text("Last successful sync: Today, Just now", style: TextStyle(color: Colors.white38, fontSize: 12)),
                   ),
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      _buildSyncStat("Pending", "0 Items"),
-                      _buildSyncStat("Upload Speed", "45ms"),
+                      _buildSyncStat("Pending", "$pendingCount Items"),
+                      _buildSyncStat("Status", isSyncing ? "Syncing..." : "Ready"),
                     ],
                   ),
                 ],
@@ -74,13 +131,14 @@ const Row( // Add 'const' here
                   backgroundColor: const Color(0xFF3B82F6),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                 ),
-                onPressed: () {},
-                child: const Text("Sync Data Now", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                onPressed: isSyncing ? null : _handleSync,
+                child: isSyncing 
+                  ? const CircularProgressIndicator(color: Colors.white)
+                  : const Text("Sync Data Now", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
               ),
             ),
             const SizedBox(height: 30),
 
-            // Offline Preferences Section
             _sectionTitle("OFFLINE PREFERENCES"),
             _buildSwitchTile(Icons.wifi_off, "Force Offline Mode", "Work without internet", offlineMode, (val) => setState(() => offlineMode = val)),
             _buildSwitchTile(Icons.shopping_basket_outlined, "Allow Offline Sales", "Queue transactions when offline", allowOfflineSales, (val) => setState(() => allowOfflineSales = val)),
@@ -88,13 +146,13 @@ const Row( // Add 'const' here
 
             const SizedBox(height: 30),
             _sectionTitle("DATA MANAGEMENT"),
-            _buildDataTile("Pending Transactions", "All Clear"),
-            _buildDataTile("Inventory Database", "v2.41"),
+            _buildDataTile("Database Version", "v2.41"),
+            _buildDataTile("Local Storage Used", "1.2 MB"),
             
             const SizedBox(height: 30),
-            _sectionTitle("ADVANCED"),
-            _buildActionTile("View Sync Conflict Log", Colors.white),
-            _buildActionTile("Clear Local Cache", Colors.redAccent),
+            _sectionTitle("BACKUP & RESTORE (LAB TASK)"),
+            _buildActionTile("Manual Cloud Backup", Colors.greenAccent, Icons.cloud_upload),
+            _buildActionTile("Restore from Google Drive", Colors.orangeAccent, Icons.settings_backup_restore),
           ],
         ),
       ),
@@ -121,20 +179,19 @@ const Row( // Add 'const' here
   }
 
   Widget _buildSwitchTile(IconData icon, String title, String sub, bool val, Function(bool) onChanged) {
-  return ListTile(
-    contentPadding: EdgeInsets.zero,
-    leading: Icon(icon, color: Colors.orangeAccent),
-    title: Text(title, style: const TextStyle(color: Colors.white, fontSize: 14)),
-    subtitle: Text(sub, style: const TextStyle(color: Colors.white38, fontSize: 11)),
-    trailing: Switch(
-      value: val,
-      activeThumbColor: Colors.blue,
-      onChanged: (bool newValue) {
-        onChanged(newValue);
-      },
-    ), // Switch ka bracket yahan band ho raha hai
-  ); // ListTile ka bracket aur semicolon yahan hai
-}
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      leading: Icon(icon, color: Colors.orangeAccent),
+      title: Text(title, style: const TextStyle(color: Colors.white, fontSize: 14)),
+      subtitle: Text(sub, style: const TextStyle(color: Colors.white38, fontSize: 11)),
+      trailing: Switch(
+        value: val,
+        activeTrackColor: Colors.blue.withValues(alpha: 0.5),
+        activeColor: Colors.blue,
+        onChanged: onChanged,
+      ),
+    );
+  }
 
   Widget _buildDataTile(String title, String trailing) {
     return ListTile(
@@ -150,11 +207,15 @@ const Row( // Add 'const' here
     );
   }
 
-  Widget _buildActionTile(String title, Color color) {
+  Widget _buildActionTile(String title, Color color, IconData icon) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
+      leading: Icon(icon, color: color, size: 20),
       title: Text(title, style: TextStyle(color: color, fontSize: 14)),
       trailing: const Icon(Icons.chevron_right, color: Colors.white24),
+      onTap: () {
+        // Yahan Google Drive Backup ka logic aayega
+      },
     );
   }
 }

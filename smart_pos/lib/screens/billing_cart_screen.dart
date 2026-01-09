@@ -105,9 +105,9 @@ const Row( // 'const' keyword yahan add kiya gaya hai
                       shadowColor: const Color(0xFFFFD700).withValues(alpha: 0.3),
                     ),
                     onPressed: () {},
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      children: [
                         Text("CHARGE \$73.15", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18, letterSpacing: 1)),
                         SizedBox(width: 10),
                         Icon(Icons.arrow_forward, color: Colors.black),
