@@ -1,0 +1,96 @@
+<%- include('../partials/header') %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h3 class="fw-bold"><i class="bi bi-person-badge-fill me-2"></i>Doctor Profile</h3>
+  <a href="/doctors" class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i> Back</a>
+</div>
+
+<div class="row g-4">
+  <div class="col-md-4">
+    <div class="card p-4 text-center">
+      <div style="width:100px;height:100px;background:linear-gradient(135deg,#0d6efd,#0dcaf0);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:2.5rem;color:white">
+        <i class="bi bi-person-fill"></i>
+      </div>
+      <h4 class="fw-bold">Dr. <%= doctor.name %></h4>
+      <span class="badge bg-success fs-6 mb-3"><%= doctor.specialization %></span>
+      <hr>
+      <div class="text-start">
+        <p><i class="bi bi-envelope me-2 text-primary"></i><%= doctor.email %></p>
+        <p><i class="bi bi-phone me-2 text-primary"></i><%= doctor.phone || 'N/A' %></p>
+        <p><i class="bi bi-cash me-2 text-primary"></i>Rs. <%= doctor.fee || 0 %> per visit</p>
+        <% if(doctor.availableDays && doctor.availableDays.length > 0) { %>
+          <p class="mb-1"><i class="bi bi-calendar me-2 text-primary"></i>Available Days:</p>
+          <div class="d-flex flex-wrap gap-1 mt-1">
+            <% doctor.availableDays.forEach(day => { %>
+              <span class="badge bg-primary"><%= day %></span>
+            <% }) %>
+          </div>
+        <% } %>
+      </div>
+      <hr>
+      <a href="/doctors/edit/<%= doctor._id %>" class="btn btn-warning w-100">
+        <i class="bi bi-pencil me-1"></i>Edit Profile
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="row g-3 mb-4">
+      <div class="col-md-4">
+        <div class="card p-3 text-center text-white" style="background:#0d6efd">
+          <div class="fs-2 fw-bold"><%= total %></div>
+          <div>Total Appointments</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 text-center text-white" style="background:#198754">
+          <div class="fs-2 fw-bold"><%= confirmed %></div>
+          <div>Confirmed</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 text-center text-white" style="background:#6f42c1">
+          <div class="fs-2 fw-bold"><%= pending %></div>
+          <div>Pending</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header fw-bold bg-white border-0 pt-3">
+        <i class="bi bi-clock-history me-2 text-primary"></i>Recent Patients
+      </div>
+      <div class="table-responsive">
+        <table class="table table-hover mb-0">
+          <thead class="table-light">
+            <tr><th>Patient</th><th>Phone</th><th>Date</th><th>Time</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <% if(appointments.length === 0) { %>
+              <tr><td colspan="5" class="text-center text-muted py-3">No appointments yet</td></tr>
+            <% } %>
+            <% appointments.slice(0,8).forEach(a => { %>
+              <tr>
+                <td><%= a.patient ? a.patient.name : '-' %></td>
+                <td><%= a.patient ? a.patient.phone : '-' %></td>
+                <td><%= new Date(a.date).toLocaleDateString() %></td>
+                <td><%= a.timeSlot %></td>
+                <td>
+                  <% if(a.status==='confirmed') { %>
+                    <span class="badge bg-success">Confirmed</span>
+                  <% } else if(a.status==='cancelled') { %>
+                    <span class="badge bg-danger">Cancelled</span>
+                  <% } else { %>
+                    <span class="badge bg-warning text-dark">Pending</span>
+                  <% } %>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>
