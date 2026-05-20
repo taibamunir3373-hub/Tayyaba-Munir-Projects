@@ -1,0 +1,123 @@
+﻿<Window x:Class="LibrarySystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Library Information System" Height="700" Width="1100"
+        WindowStartupLocation="CenterScreen">
+
+	<Window.Resources>
+		<Style x:Key="NavButtonStyle" TargetType="Button">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="Height" Value="45"/>
+			<Setter Property="Margin" Value="0,2"/>
+			<Setter Property="BorderThickness" Value="0.5"/>
+			<Setter Property="BorderBrush" Value="#44FFFFFF"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="Padding" Value="15,0,0,0"/>
+			<Setter Property="FontSize" Value="14"/>
+			<Style.Triggers>
+				<Trigger Property="IsMouseOver" Value="True">
+					<Setter Property="Background" Value="#33FFFFFF"/>
+					<Setter Property="BorderBrush" Value="White"/>
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+	</Window.Resources>
+
+	<Grid>
+		<Grid x:Name="DashboardContent" Visibility="Collapsed">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="260"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<Border Grid.Column="0" Background="#FF1A2A6C">
+				<DockPanel>
+					<StackPanel DockPanel.Dock="Top" Margin="20">
+						<Ellipse Width="100" Height="100" Stroke="White" StrokeThickness="2" Margin="0,0,0,10">
+							<Ellipse.Fill>
+								<ImageBrush ImageSource="/image/images.jpg" Stretch="UniformToFill"/>
+							</Ellipse.Fill>
+						</Ellipse>
+
+						<TextBlock x:Name="lblUserRole" Text="LIBRARIAN PANEL" Foreground="White" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+						<Separator Margin="0,20" Background="#44FFFFFF"/>
+					</StackPanel>
+
+					<ScrollViewer VerticalScrollBarVisibility="Auto">
+						<StackPanel Margin="10,0">
+							<TextBlock Text="Quick Search (F6):" Foreground="White" Margin="5,0,0,2" FontSize="10" Opacity="0.7"/>
+							<TextBox x:Name="txtQuickSearch" Height="30" Margin="5,0,5,15" Padding="5,0" 
+                                     VerticalContentAlignment="Center"/>
+
+							<Button Content="📚 Add New Book (F1)" Click="BtnAddBook_Click" Style="{StaticResource NavButtonStyle}"/>
+							<Button Content="✏️ Edit/Delete Books (F2)" Click="BtnEditDelete_Click" Style="{StaticResource NavButtonStyle}"/>
+							<Button Content="📤 Issue Book (F3)" Click="BtnIssue_Click" Style="{StaticResource NavButtonStyle}"/>
+							<Button Content="📥 Return Book (F4)" Click="BtnReturn_Click" Style="{StaticResource NavButtonStyle}"/>
+							<Button Content="📊 Generate Reports (F5)" Click="BtnReports_Click" Style="{StaticResource NavButtonStyle}"/>
+							<Button Content="🔍 Search Records (F6)" Click="BtnSearch_Click" Style="{StaticResource NavButtonStyle}"/>
+							<Button Content="📋 ViewRecords (F9)" Click="BtnViewRecords_Click" Style="{StaticResource NavButtonStyle}"/>
+							<Button Content="💾 Manual Backup (F10)" Click="BtnBackup_Click" Style="{StaticResource NavButtonStyle}"/>
+
+							<Separator Margin="0,20" Background="#44FFFFFF"/>
+							<Button Content="🔓 Logout (F8)" Click="BtnLogout_Click" Background="#FFB21F1F" Foreground="White" Height="40" FontWeight="Bold"/>
+						</StackPanel>
+					</ScrollViewer>
+				</DockPanel>
+			</Border>
+
+			<Grid Grid.Column="1" Background="#F0F2F5">
+				<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+					<Image Source="/01.jpg" Width="500" Height="350" Stretch="Uniform">
+						<Image.Effect>
+							<DropShadowEffect BlurRadius="15" ShadowDepth="5" Opacity="0.3"/>
+						</Image.Effect>
+					</Image>
+					<TextBlock Text="Welcome to Library Management System" FontSize="26" FontWeight="ExtraLight" 
+                               Foreground="#FF1A2A6C" Margin="0,20,0,0" HorizontalAlignment="Center"/>
+				</StackPanel>
+			</Grid>
+		</Grid>
+
+		<Grid x:Name="LoginPanel" Visibility="Visible">
+			<Grid.Background>
+				<SolidColorBrush Color="#F0F2F5"/>
+			</Grid.Background>
+
+			<Border Background="White" CornerRadius="15" Padding="35" Width="380" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                    BorderBrush="#FF1A2A6C" BorderThickness="1.5">
+				<Border.Effect>
+					<DropShadowEffect BlurRadius="15" Direction="270" Opacity="0.1" ShadowDepth="3"/>
+				</Border.Effect>
+
+				<StackPanel>
+					<TextBlock Text="📚" FontSize="40" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+					<TextBlock Text="LIBRARY SYSTEM LOGIN" FontSize="22" FontWeight="Bold" 
+                               Foreground="#FF1A2A6C" HorizontalAlignment="Center" Margin="0,0,0,25"/>
+
+					<TextBlock Text="Username" Margin="0,5,0,5" FontWeight="SemiBold" Foreground="#333"/>
+					<TextBox x:Name="txtUsername" Height="38" Margin="0,0,0,15" Padding="8,0" 
+                             VerticalContentAlignment="Center" BorderBrush="#CCC"/>
+
+					<TextBlock Text="Password" Margin="0,5,0,5" FontWeight="SemiBold" Foreground="#333"/>
+					<PasswordBox x:Name="txtPassword" Height="38" Margin="0,0,0,15" Padding="8,0" 
+                                 VerticalContentAlignment="Center" BorderBrush="#CCC"/>
+
+					<TextBlock Text="Access Role" Margin="0,5,0,5" FontWeight="SemiBold" Foreground="#333"/>
+					<ComboBox x:Name="cmbRole" Height="38" Margin="0,0,0,30" VerticalContentAlignment="Center" BorderBrush="#CCC">
+						<ComboBoxItem Content="Librarian" IsSelected="True"/>
+						<ComboBoxItem Content="Assistant"/>
+					</ComboBox>
+
+					<Button Content="LOGIN TO SYSTEM" Click="BtnLoginAction_Click" Height="45" 
+                            Background="#FF1A2A6C" Foreground="White" FontWeight="Bold" 
+                            FontSize="14" Cursor="Hand"/>
+
+					<TextBlock Text="Authorized Personnel Only" FontSize="10" Foreground="Gray" 
+                               HorizontalAlignment="Center" Margin="0,15,0,0"/>
+				</StackPanel>
+			</Border>
+		</Grid>
+	</Grid>
+</Window>

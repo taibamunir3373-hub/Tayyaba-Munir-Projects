@@ -1,0 +1,47 @@
+﻿<Window x:Class="LibrarySystem.ReturnBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Return Book Module - F4" Height="650" Width="550" WindowStartupLocation="CenterScreen">
+
+	<Grid Margin="20">
+		<StackPanel>
+			<TextBlock Text="RETURN BOOK PANEL" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#FFB21F1F" Margin="0,0,0,20"/>
+
+			<GroupBox Header="Step 1: Who is returning?" Margin="0,0,0,10" Padding="10">
+				<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+					<RadioButton x:Name="rbRetStudent" Content="Student" IsChecked="True" Checked="RetType_Checked" Margin="0,0,30,0" FontWeight="Bold"/>
+					<RadioButton x:Name="rbRetEmployee" Content="Employee" Checked="RetType_Checked" FontWeight="Bold"/>
+				</StackPanel>
+			</GroupBox>
+
+			<GroupBox Header="Step 2: Select Name" Margin="0,0,0,10" Padding="10">
+				<StackPanel>
+					<ComboBox x:Name="cmbReturnNames" Height="30" DisplayMemberPath="Name" SelectionChanged="cmbReturnNames_SelectionChanged"/>
+				</StackPanel>
+			</GroupBox>
+
+			<GroupBox Header="Step 3: Issued Book Details" Margin="0,0,0,10" Padding="10" Background="#F9F9F9">
+				<StackPanel>
+					<TextBlock x:Name="lblIssuedBook" Text="Book Name: ---" FontWeight="Bold" Margin="0,5"/>
+					<TextBlock x:Name="lblIssueDate" Text="Issued On: ---" Margin="0,2"/>
+					<TextBlock x:Name="lblDueDate" Text="Due Date: ---" Margin="0,2" Foreground="Red"/>
+				</StackPanel>
+			</GroupBox>
+
+			<GroupBox Header="Step 4: Return Summary" Margin="0,0,0,15" Padding="10">
+				<StackPanel>
+					<TextBlock Text="Today's Date:" FontWeight="Bold"/>
+					<DatePicker x:Name="dtpActualReturnDate" Height="35" SelectedDateChanged="dtpActualReturnDate_SelectedDateChanged"/>
+
+					<StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+						<TextBlock Text="Calculated Fine: " FontSize="16" FontWeight="Bold"/>
+						<TextBlock x:Name="lblFineAmount" Text="Rs. 0" FontSize="16" FontWeight="Bold" Foreground="Red" Margin="10,0"/>
+					</StackPanel>
+					<TextBlock Text="(Fine: Rs. 10 per day after due date)" FontSize="10" Foreground="Gray"/>
+				</StackPanel>
+			</GroupBox>
+
+			<Button Content="CONFIRM RETURN &amp; UPDATE STATUS" Click="BtnConfirmReturn_Click" Height="45" Background="#FF1A2A6C" Foreground="White" FontWeight="Bold"/>
+		</StackPanel>
+	</Grid>
+</Window>

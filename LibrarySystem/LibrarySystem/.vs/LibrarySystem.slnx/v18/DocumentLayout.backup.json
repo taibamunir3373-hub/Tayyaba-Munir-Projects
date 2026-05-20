@@ -1,0 +1,335 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\new sony computers\\source\\repos\\librarysystem\\librarysystem\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\reportswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\reportswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\reportswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\reportswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\backupwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\backupwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\backupwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\backupwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\searchrecordswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\searchrecordswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\viewrecordswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\viewrecordswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\searchrecordswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\searchrecordswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\viewrecordswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\viewrecordswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\returnbookwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\returnbookwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\returnbookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\returnbookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\issuebookwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\issuebookwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\issuebookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\issuebookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\editdeletebookwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\editdeletebookwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\editdeletebookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\editdeletebookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\addbookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\addbookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\addbookwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\addbookwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\librarysystem\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF903E0E-0CC6-45DF-8021-CCEF130AC897}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\MainWindow.xaml.cs",
+              "RelativeToolTip": "LibrarySystem\\MainWindow.xaml.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAFYAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T04:46:37.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "LibrarySystem\\LoginWindow.xaml",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\LoginWindow.xaml",
+              "RelativeToolTip": "LibrarySystem\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-17T04:48:31.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "LibrarySystem\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\MainWindow.xaml*",
+              "RelativeToolTip": "LibrarySystem\\MainWindow.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-17T04:46:46.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReportsWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\ReportsWindow.xaml.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\ReportsWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\ReportsWindow.xaml.cs",
+              "RelativeToolTip": "LibrarySystem\\ReportsWindow.xaml.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAswDMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T06:36:25.052Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReportsWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\ReportsWindow.xaml",
+              "RelativeDocumentMoniker": "LibrarySystem\\ReportsWindow.xaml",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\ReportsWindow.xaml",
+              "RelativeToolTip": "LibrarySystem\\ReportsWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-17T06:32:00.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BackupWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\BackupWindow.xaml",
+              "RelativeDocumentMoniker": "LibrarySystem\\BackupWindow.xaml",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\BackupWindow.xaml",
+              "RelativeToolTip": "LibrarySystem\\BackupWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-17T06:34:08.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BackupWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\BackupWindow.xaml.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\BackupWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\BackupWindow.xaml.cs",
+              "RelativeToolTip": "LibrarySystem\\BackupWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T06:34:46.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SearchRecordsWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\SearchRecordsWindow.xaml.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\SearchRecordsWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\SearchRecordsWindow.xaml.cs",
+              "RelativeToolTip": "LibrarySystem\\SearchRecordsWindow.xaml.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAswD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T06:29:13.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SearchRecordsWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\SearchRecordsWindow.xaml",
+              "RelativeDocumentMoniker": "LibrarySystem\\SearchRecordsWindow.xaml",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\SearchRecordsWindow.xaml",
+              "RelativeToolTip": "LibrarySystem\\SearchRecordsWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-17T06:28:45.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ViewRecordsWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\ViewRecordsWindow.xaml.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\ViewRecordsWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\ViewRecordsWindow.xaml.cs",
+              "RelativeToolTip": "LibrarySystem\\ViewRecordsWindow.xaml.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAswC8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T06:19:17.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ViewRecordsWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\ViewRecordsWindow.xaml",
+              "RelativeDocumentMoniker": "LibrarySystem\\ViewRecordsWindow.xaml",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\ViewRecordsWindow.xaml",
+              "RelativeToolTip": "LibrarySystem\\ViewRecordsWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-17T06:18:42.508Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ReturnBookWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\ReturnBookWindow.xaml.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\ReturnBookWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\ReturnBookWindow.xaml.cs",
+              "RelativeToolTip": "LibrarySystem\\ReturnBookWindow.xaml.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAkwFwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T06:15:48.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ReturnBookWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\ReturnBookWindow.xaml",
+              "RelativeDocumentMoniker": "LibrarySystem\\ReturnBookWindow.xaml",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\ReturnBookWindow.xaml",
+              "RelativeToolTip": "LibrarySystem\\ReturnBookWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-17T06:13:43.423Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IssueBookWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\IssueBookWindow.xaml",
+              "RelativeDocumentMoniker": "LibrarySystem\\IssueBookWindow.xaml",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\IssueBookWindow.xaml",
+              "RelativeToolTip": "LibrarySystem\\IssueBookWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-17T06:00:06.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IssueBookWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\IssueBookWindow.xaml.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\IssueBookWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\IssueBookWindow.xaml.cs",
+              "RelativeToolTip": "LibrarySystem\\IssueBookWindow.xaml.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAswF0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T06:01:00.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "EditDeleteBookWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\EditDeleteBookWindow.xaml.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\EditDeleteBookWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\EditDeleteBookWindow.xaml.cs",
+              "RelativeToolTip": "LibrarySystem\\EditDeleteBookWindow.xaml.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAswDUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T05:40:52.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EditDeleteBookWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\EditDeleteBookWindow.xaml",
+              "RelativeDocumentMoniker": "LibrarySystem\\EditDeleteBookWindow.xaml",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\EditDeleteBookWindow.xaml",
+              "RelativeToolTip": "LibrarySystem\\EditDeleteBookWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-17T05:40:04.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AddBookWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\AddBookWindow.xaml",
+              "RelativeDocumentMoniker": "LibrarySystem\\AddBookWindow.xaml",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\AddBookWindow.xaml",
+              "RelativeToolTip": "LibrarySystem\\AddBookWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-17T05:06:14.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AddBookWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\AddBookWindow.xaml.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\AddBookWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\AddBookWindow.xaml.cs",
+              "RelativeToolTip": "LibrarySystem\\AddBookWindow.xaml.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAswD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T05:06:45.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "LoginWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\LoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\LoginWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\NEW SONY COMPUTERS\\source\\repos\\LibrarySystem\\LibrarySystem\\LoginWindow.xaml.cs",
+              "RelativeToolTip": "LibrarySystem\\LoginWindow.xaml.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAswDAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T04:49:50.913Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
